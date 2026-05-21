@@ -1,0 +1,55 @@
+name: CI Calcular FV
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validar-api:
+    name: Testes da API
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./api
+    
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependências da API
+        run: npm install
+
+      - name: Executar testes da API
+        run: npm test
+
+  validar-app:
+    name: Testes do App React
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
+    
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependências do App
+        run: npm install
+
+      - name: Executar testes do React
+        run: npm test
+
+      - name: Testar Build
+        run: npm run build

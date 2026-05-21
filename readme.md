@@ -65,7 +65,7 @@ git clone https://github.com/RafssRv/calcularfv.git
 ## 👨‍💻 Desenvolvedores
 
 * Felipe Leoneli
-* Colega de projeto
+* Rafael Pires
 
 ## 📌 Observações
 

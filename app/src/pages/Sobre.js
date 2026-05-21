@@ -1,8 +1,8 @@
 import React from 'react';
 
 const EQUIPE = [
-  { nome: 'Aluno 1', ra: 'RA: 000001', papel: 'API + Testes' },
-  { nome: 'Aluno 2', ra: 'RA: 000002', papel: 'React App' },
+  { nome: 'Felipe Nonato', ra: 'RA: 24021973', papel: 'React App + Testes', foto: require('../view/Nonato.jpg')},
+  { nome: 'Rafael Pires', ra: 'RA: 24007131', papel: 'API + Testes', foto: require('../view/Rafael.jpg')},
 ];
 
 function Sobre({ onNavegar }) {
@@ -39,15 +39,10 @@ function Sobre({ onNavegar }) {
         <div style={styles.card}>
           <h3 style={styles.cardTitulo}>Nossa Equipe</h3>
 
-          {/* ⚠️ Substitua pela foto real da equipe */}
-          <div style={styles.fotoPlaceholder}>
-            📷 Foto da equipe aqui
-          </div>
-
           <div style={styles.membroGrid}>
             {EQUIPE.map(m => (
               <div key={m.nome} style={styles.membroCard}>
-                <div style={styles.avatar}>{m.nome[0]}</div>
+                <div style={styles.avatar}>{<img src={m.foto} alt={m.nome} style={styles.avatar} />}</div>
                 <span style={styles.membroNome}>{m.nome}</span>
                 <span style={styles.membroRa}>{m.ra}</span>
                 <span style={styles.membroPapel}>{m.papel}</span>
@@ -76,10 +71,10 @@ const styles = {
   fotoPlaceholder: { width: '100%', height: '160px', backgroundColor: '#1c2029', border: '2px dashed #2a2f3d', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#7a8099', fontSize: '13px', marginBottom: '20px' },
   membroGrid: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' },
   membroCard: { backgroundColor: '#1c2029', border: '1px solid #2a2f3d', borderRadius: '10px', padding: '16px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' },
-  avatar: { width: '48px', height: '48px', borderRadius: '50%', backgroundColor: '#f0a500', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px', fontWeight: 'bold', color: '#000', marginBottom: '8px' },
-  membroNome: { fontWeight: 'bold', fontSize: '14px' },
+  avatar: { width: '64px', height: '64px', borderRadius: '50%', objectFit: 'cover', marginBottom: '8px' },  membroNome: { fontWeight: 'bold', fontSize: '14px' },
   membroRa: { color: '#7a8099', fontSize: '12px' },
   membroPapel: { color: '#f0a500', fontSize: '12px', fontWeight: 'bold', marginTop: '4px' },
+  foto: { width: '100%', borderRadius: '10px', marginBottom: '20px' },
 };
 
 export default Sobre;
