@@ -22,7 +22,7 @@ O projeto foi criado para auxiliar no entendimento de conceitos financeiros e pr
 
 A aplicação utiliza a fórmula clássica de juros compostos:
 
-genui{"math_block_widget_always_prefetch_v2":{"content":"FV = PV(1+i)^n"}}
+**`FV = PV(1 + i)^n`**
 
 Onde:
 
